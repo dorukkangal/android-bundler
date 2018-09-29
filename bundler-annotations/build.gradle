@@ -1,0 +1,7 @@
+apply plugin: "kotlin"
+
+dependencies {
+    implementation libraries.kotlin.jdk
+
+    compileOnly libraries.android.mirror
+}
