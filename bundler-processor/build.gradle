@@ -1,0 +1,11 @@
+apply plugin: "kotlin"
+
+dependencies {
+    compileOnly project(':bundler-annotations')
+
+    implementation libraries.kotlin.jdk
+    implementation libraries.kotlin.reflection
+    implementation libraries.kotlin.poet
+
+    compileOnly libraries.android.mirror
+}

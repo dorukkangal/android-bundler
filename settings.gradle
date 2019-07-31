@@ -1,2 +1,3 @@
 include ':app'
 include ':bundler-annotations'
+include ':bundler-processor'
