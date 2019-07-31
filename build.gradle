@@ -18,6 +18,7 @@ allprojects {
     repositories {
         google()
         jcenter()
+        maven { url 'https://jitpack.io' }
     }
 }
 
@@ -33,6 +34,7 @@ ext.libraries = [
         ],
         android: [
                 appCompat: 'androidx.appcompat:appcompat:1.0.2',
+                material : 'com.google.android.material:material:1.0.0',
                 mirror   : 'com.google.android:android:4.1.1.4',
         ]
 ]

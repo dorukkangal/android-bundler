@@ -1,7 +1,11 @@
 apply plugin: 'com.android.application'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-android-extensions'
+apply plugin: 'kotlin-kapt'
 
 android {
     compileSdkVersion 28
+
     defaultConfig {
         applicationId "io.bundler"
         minSdkVersion 19
@@ -9,15 +13,26 @@ android {
         versionCode 1
         versionName "1.0"
     }
+
     buildTypes {
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
+
+    androidExtensions {
+        experimental true
+    }
 }
 
 dependencies {
-    implementation fileTree(dir: 'libs', include: ['*.jar'])
-    implementation libraries.android.appCompat
+    implementation libraries.kotlin.jdk
+    implementation libraries.android.material
+
+    //implementation project(':bundler-annotations')
+    //kapt project(':bundler-processor')
+
+    implementation 'com.github.dorukkangal.android-bundler:bundler-annotations:1.0.0'
+    kapt 'com.github.dorukkangal.android-bundler:bundler-processor:1.0.0'
 }
